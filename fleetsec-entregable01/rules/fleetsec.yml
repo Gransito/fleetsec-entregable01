@@ -1,0 +1,14 @@
+rules:
+  - id: fleetsec-no-sql-concat
+    languages: [python]
+    message: "No construyas consultas SQL concatenando entradas externas; usa parámetros."
+    severity: ERROR
+    patterns:
+      - pattern: $DB.execute($QUERY + $INPUT)
+
+  - id: fleetsec-no-hardcoded-jwt-secret
+    languages: [python]
+    message: "No almacenes secretos JWT directamente en el código. Usa variables de entorno o un gestor de secretos."
+    severity: ERROR
+    patterns:
+      - pattern: $JWT_SECRET = "..."
