@@ -9,6 +9,10 @@ permissions:
   security-events: write
   issues: write
 
+defaults:
+  run:
+    working-directory: fleetsec-entregable01
+
 jobs:
   sast:
     runs-on: ubuntu-latest
@@ -81,3 +85,4 @@ jobs:
         with:
           directory: terraform
           soft_fail: true
+
