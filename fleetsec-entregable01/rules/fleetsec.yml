@@ -11,4 +11,4 @@ rules:
     message: "No almacenes secretos JWT directamente en el código. Usa variables de entorno o un gestor de secretos."
     severity: ERROR
     patterns:
-      - pattern: $JWT_SECRET = "..."
+      - pattern: JWT_SECRET = "..."
