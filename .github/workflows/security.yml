@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install semgrep==1.104.0
+      - run: pip install "setuptools<81" semgrep==1.104.0
       - run: semgrep scan --config rules/fleetsec.yml --error app tests
 
   tests-sca-sbom:
